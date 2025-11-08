@@ -15,7 +15,7 @@
     "dotenv": "^16.3.1",
     "@supabase/supabase-js": "^2.38.1",
     "jsonwebtoken": "^9.1.2",
-    "twilio": "^3.94.0",
+    "twilio": "^4.21.0",
     "uuid": "^9.0.1",
     "joi": "^17.11.0",
     "axios": "^1.6.2"
