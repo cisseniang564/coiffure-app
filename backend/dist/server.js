@@ -11,17 +11,18 @@ const app = (0, express_1.default)();
 // ═════════════════════════════════════════════════════════════
 // MIDDLEWARE
 // ═════════════════════════════════════════════════════════════
-// CORS
-app.use((0, cors_1.default)({
+// CORS - ✅ CORRIGÉ
+const corsOptions = {
     origin: [
         'http://localhost:5173',
         'http://localhost:3000',
-        process.env.FRONTEND_URL,
-    ],
+        process.env.FRONTEND_URL || 'http://localhost:5173',
+    ].filter(Boolean),
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
-}));
+};
+app.use((0, cors_1.default)(corsOptions));
 // Body parser
 app.use(express_1.default.json({ limit: '10mb' }));
 app.use(express_1.default.urlencoded({ limit: '10mb', extended: true }));

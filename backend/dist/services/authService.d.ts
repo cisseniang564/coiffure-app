@@ -1,7 +1,7 @@
 import { SignupCoiffeurRequest, SignupClientRequest, LoginRequest } from '../types/auth';
 export declare class AuthService {
     static signupCoiffeur(data: SignupCoiffeurRequest): Promise<{
-        access_token: any;
+        access_token: string;
         user: {
             id: string;
             email: string;
@@ -10,7 +10,7 @@ export declare class AuthService {
         };
     }>;
     static signupClient(data: SignupClientRequest): Promise<{
-        access_token: any;
+        access_token: string;
         user: {
             id: string;
             email: string;
@@ -18,7 +18,7 @@ export declare class AuthService {
         };
     }>;
     static login(data: LoginRequest): Promise<{
-        access_token: any;
+        access_token: string;
         user: {
             id: string;
             email: string;
@@ -34,7 +34,7 @@ export declare class AuthService {
     }>;
     private static generateJWT;
     static refreshToken(oldToken: string): Promise<{
-        access_token: any;
+        access_token: string;
     }>;
 }
 //# sourceMappingURL=authService.d.ts.map

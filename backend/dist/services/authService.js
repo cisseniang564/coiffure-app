@@ -182,6 +182,8 @@ class AuthService {
         }
     }
     // 5️⃣ GENERATE JWT TOKEN
+    // À l'intérieur de la classe AuthService, remplacer la méthode:
+    // 5️⃣ GENERATE JWT TOKEN - ✅ CORRIGÉ
     static generateJWT(payload) {
         const token = jsonwebtoken_1.default.sign({
             sub: payload.userId,
@@ -189,7 +191,7 @@ class AuthService {
             user_type: payload.user_type,
             salon_id: payload.salon_id,
         }, process.env.JWT_SECRET, {
-            expiresIn: process.env.JWT_EXPIRY || '7d',
+            expiresIn: '7d', // ✅ Change de expiresIn au lieu de expiresIn: process.env.JWT_EXPIRY
         });
         return token;
     }
